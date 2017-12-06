@@ -418,11 +418,23 @@ class Body extends React.Component {
             </Localized>
           </div>
         </div>
-        { clips }
-        { errorMessages }
+        <section className="clips">
+          { errorMessages }
+          { this.renderClipMessage() }
+          { clips }
+        </section>
         <Footer forUrl={ shot.viewUrl } {...this.props} />
       </div>
     </reactruntime.BodyTemplate>);
+  }
+
+  renderClipMessage() {
+    return <div className="clips-message">
+      <div className="clip-message-content">Help us pick what features to build next by taking this <a href="https://qsurvey.mozilla.com/s3/ss-max-diff-q4-2017">short survey</a>.</div>
+      <div className="clip-message-dismiss-wrapper">
+        <div className="clip-message-dismiss" />
+      </div>
+    </div>
   }
 
   renderFirefoxRequired() {
